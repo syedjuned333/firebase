@@ -1,0 +1,19 @@
+<table style="border: 1px solid black;" >
+    <thead>
+        <tr style="border: 1px solid black;" >
+            <th>empname</th>
+            <th>empaddress</th>
+            <th>empage</th>
+        </tr>
+    </thead>
+    <tbody style="border: 1px solid black;">
+        <button>delete</button>
+        <tr *ngFor="let emp of empDetails">
+            <th>{{emp.name}}</th>
+            <th>{{emp.address}}</th>
+            <th>{{emp.age}}</th>
+
+
+        </tr> 
+     </tbody>
+</table> 
