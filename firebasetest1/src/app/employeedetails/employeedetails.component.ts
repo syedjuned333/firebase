@@ -28,9 +28,9 @@ console.log(err)
   
   )
 }
-deleteEmployee(){
-  this.CrudService.deleteemployee().subscribe(((res: any) =>{
-    console.log(res)
-  }))
-}
+// deleteEmployee(){
+//   this.CrudService.deleteemployee().subscribe(((res: any) =>{
+//     console.log(res)
+//   }))
+// }
 }

@@ -15,6 +15,7 @@ export class AddEmployeeComponent implements OnInit {
   employeeAge!: number
   employeeAddress!: string
   message!: string
+  button!:string
   constructor(private _crudService: CrudService,private router:Router) { }
 
   ngOnInit(): void {
@@ -28,17 +29,19 @@ export class AddEmployeeComponent implements OnInit {
     Record['age'] = this.employeeAge
     Record['address'] = this.employeeAddress
     this._crudService.setEmployeeDetails([Record]);
+    alert("info saved")
     this.router.navigate(['employeedetails'])
-    // this._crudService.create_New_Employee(Record).then((res: any) => {
-    //   this.employeeName = res.employeeName;
-    //   this.employeeAddress = res.employeeAddress;
-    //   this.employeeAge = res.employeeAge;
-    //   console.log(res);
-    //   this.message = "employee data save done--"
+    this._crudService.create_New_Employee(Record).then((res: any) => {
+      this.employeeName = res.employeeName;
+      this.employeeAddress = res.employeeAddress;
+      this.employeeAge = res.employeeAge;
+      console.log(res);
+      // this.message = "employee data save done--"
+      // this.button="add"
 
-    // }).catch((error: any) => {
-    //   console.log(error)
-    // });
+    }).catch((error: any) => {
+      console.log(error)
+    });
     
 
   }
